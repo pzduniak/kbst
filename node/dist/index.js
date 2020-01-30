@@ -45,7 +45,9 @@ var moment_1 = __importDefault(require("moment"));
 var delay_1 = __importDefault(require("delay"));
 var owner = process.env.KEYBASE_OWNER || 'pzduniak';
 var pongURL = process.env.KBST_URL || '';
-var bot = new keybase_bot_1.default();
+var bot = new keybase_bot_1.default({
+    debugLogging: true,
+});
 function main() {
     return __awaiter(this, void 0, void 0, function () {
         var username_1, error_1;

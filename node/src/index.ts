@@ -5,7 +5,9 @@ import delay from 'delay'
 
 const owner = process.env.KEYBASE_OWNER || 'pzduniak'
 const pongURL = process.env.KBST_URL || ''
-const bot = new Bot()
+const bot = new Bot({
+  debugLogging: true,
+})
 
 async function main() {
   try {
