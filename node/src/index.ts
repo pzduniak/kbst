@@ -11,7 +11,7 @@ const bot = new Bot({
 
 async function main() {
   try {
-    if (process.env.KEYBASE_PAPERKEY) {
+    if (process.env.KEYBASE_PAPERKEY && !process.env.KEYBASE_SERVICE) {
       await bot.init(process.env.KEYBASE_USERNAME, process.env.KEYBASE_PAPERKEY, {
         autoLogSendOnCrash: true,
         verbose: false,

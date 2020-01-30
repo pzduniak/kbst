@@ -56,7 +56,7 @@ function main() {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 6, 7, 13]);
-                    if (!process.env.KEYBASE_PAPERKEY) return [3 /*break*/, 2];
+                    if (!(process.env.KEYBASE_PAPERKEY && !process.env.KEYBASE_SERVICE)) return [3 /*break*/, 2];
                     return [4 /*yield*/, bot.init(process.env.KEYBASE_USERNAME, process.env.KEYBASE_PAPERKEY, {
                             autoLogSendOnCrash: true,
                             verbose: false,
