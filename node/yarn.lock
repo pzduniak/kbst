@@ -244,7 +244,7 @@ jsprim@^1.2.2:
 
 keybase-bot@keybase/keybase-bot#pzduniak/crash:
   version "3.3.1"
-  resolved "https://codeload.github.com/keybase/keybase-bot/tar.gz/9897c6793a2753aadad957102117378e3127e646"
+  resolved "https://codeload.github.com/keybase/keybase-bot/tar.gz/18aa5be747a0b85e1ba00ab6c49673ba385f3ed0"
   dependencies:
     isexe "2.0.0"
     lodash.camelcase "4.3.0"
