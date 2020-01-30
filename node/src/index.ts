@@ -25,7 +25,7 @@ async function main() {
 
     const username = bot.myInfo().username
 
-    bot.chat.watchChannelForNewMessages({
+    await bot.chat.watchChannelForNewMessages({
       name: 'kbst',
       topicName: 'general',
     }, async message => {
@@ -91,7 +91,11 @@ async function main() {
   } catch(error) {
     console.error(error)
   } finally {
-    await bot.deinit()
+    console.log('Shutting down')
+
+    try {
+      await bot.deinit()
+    } catch(_) {}
   }
 }
 

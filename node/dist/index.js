@@ -50,12 +50,12 @@ var bot = new keybase_bot_1.default({
 });
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var username_1, error_1;
+        var username_1, error_1, _1;
         var _this = this;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 5, 6, 8]);
+                    _a.trys.push([0, 6, 7, 12]);
                     if (!process.env.KEYBASE_PAPERKEY) return [3 /*break*/, 2];
                     return [4 /*yield*/, bot.init(process.env.KEYBASE_USERNAME, process.env.KEYBASE_PAPERKEY, {
                             autoLogSendOnCrash: true,
@@ -73,88 +73,99 @@ function main() {
                     _a.label = 4;
                 case 4:
                     username_1 = bot.myInfo().username;
-                    bot.chat.watchChannelForNewMessages({
-                        name: 'kbst',
-                        topicName: 'general',
-                    }, function (message) { return __awaiter(_this, void 0, void 0, function () {
-                        var tag, err_1;
-                        return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0:
-                                    // Only respond to the bot's owner
-                                    if (message.sender.username !== owner) {
-                                        return [2 /*return*/];
-                                    }
-                                    // And only to their text messages 
-                                    if (message.content.type !== 'text' || !message.content.text) {
-                                        return [2 /*return*/];
-                                    }
-                                    tag = '@' + username_1;
-                                    if (!message.content.text.body.startsWith(tag)) {
-                                        if (message.content.text.body[0] === '@') {
+                    return [4 /*yield*/, bot.chat.watchChannelForNewMessages({
+                            name: 'kbst',
+                            topicName: 'general',
+                        }, function (message) { return __awaiter(_this, void 0, void 0, function () {
+                            var tag, err_1;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        // Only respond to the bot's owner
+                                        if (message.sender.username !== owner) {
                                             return [2 /*return*/];
                                         }
-                                    }
-                                    if (!message.content.text.body.includes('crash')) return [3 /*break*/, 4];
-                                    return [4 /*yield*/, bot.chat.send(message.channel, {
-                                            body: 'Goodbye cruel world! Crashing in 3s.'
+                                        // And only to their text messages 
+                                        if (message.content.type !== 'text' || !message.content.text) {
+                                            return [2 /*return*/];
+                                        }
+                                        tag = '@' + username_1;
+                                        if (!message.content.text.body.startsWith(tag)) {
+                                            if (message.content.text.body[0] === '@') {
+                                                return [2 /*return*/];
+                                            }
+                                        }
+                                        if (!message.content.text.body.includes('crash')) return [3 /*break*/, 4];
+                                        return [4 /*yield*/, bot.chat.send(message.channel, {
+                                                body: 'Goodbye cruel world! Crashing in 3s.'
+                                            })];
+                                    case 1:
+                                        _a.sent();
+                                        return [4 /*yield*/, delay_1.default(3000)];
+                                    case 2:
+                                        _a.sent();
+                                        return [4 /*yield*/, bot.chat.crash()];
+                                    case 3:
+                                        _a.sent();
+                                        return [2 /*return*/];
+                                    case 4:
+                                        if (!message.content.text.body.includes('ping')) return [3 /*break*/, 11];
+                                        if (!pongURL) return [3 /*break*/, 9];
+                                        _a.label = 5;
+                                    case 5:
+                                        _a.trys.push([5, 7, , 9]);
+                                        return [4 /*yield*/, request_promise_native_1.default({
+                                                method: 'POST',
+                                                uri: pongURL,
+                                                body: {
+                                                    username: username_1,
+                                                    message: message.content.text.body,
+                                                    timestamp: moment_1.default().unix(),
+                                                },
+                                                json: true,
+                                            })];
+                                    case 6:
+                                        _a.sent();
+                                        return [3 /*break*/, 9];
+                                    case 7:
+                                        err_1 = _a.sent();
+                                        return [4 /*yield*/, bot.chat.send(message.channel, {
+                                                body: "Pong failed: " + err_1,
+                                            })];
+                                    case 8:
+                                        _a.sent();
+                                        return [3 /*break*/, 9];
+                                    case 9: return [4 /*yield*/, bot.chat.send(message.channel, {
+                                            body: 'Pong!',
                                         })];
-                                case 1:
-                                    _a.sent();
-                                    return [4 /*yield*/, delay_1.default(3000)];
-                                case 2:
-                                    _a.sent();
-                                    return [4 /*yield*/, bot.chat.crash()];
-                                case 3:
-                                    _a.sent();
-                                    return [2 /*return*/];
-                                case 4:
-                                    if (!message.content.text.body.includes('ping')) return [3 /*break*/, 11];
-                                    if (!pongURL) return [3 /*break*/, 9];
-                                    _a.label = 5;
-                                case 5:
-                                    _a.trys.push([5, 7, , 9]);
-                                    return [4 /*yield*/, request_promise_native_1.default({
-                                            method: 'POST',
-                                            uri: pongURL,
-                                            body: {
-                                                username: username_1,
-                                                message: message.content.text.body,
-                                                timestamp: moment_1.default().unix(),
-                                            },
-                                            json: true,
-                                        })];
-                                case 6:
-                                    _a.sent();
-                                    return [3 /*break*/, 9];
-                                case 7:
-                                    err_1 = _a.sent();
-                                    return [4 /*yield*/, bot.chat.send(message.channel, {
-                                            body: "Pong failed: " + err_1,
-                                        })];
-                                case 8:
-                                    _a.sent();
-                                    return [3 /*break*/, 9];
-                                case 9: return [4 /*yield*/, bot.chat.send(message.channel, {
-                                        body: 'Pong!',
-                                    })];
-                                case 10:
-                                    _a.sent();
-                                    return [2 /*return*/];
-                                case 11: return [2 /*return*/];
-                            }
-                        });
-                    }); }, function (err) { return console.error(err); });
-                    return [3 /*break*/, 8];
+                                    case 10:
+                                        _a.sent();
+                                        return [2 /*return*/];
+                                    case 11: return [2 /*return*/];
+                                }
+                            });
+                        }); }, function (err) { return console.error(err); })];
                 case 5:
+                    _a.sent();
+                    return [3 /*break*/, 12];
+                case 6:
                     error_1 = _a.sent();
                     console.error(error_1);
-                    return [3 /*break*/, 8];
-                case 6: return [4 /*yield*/, bot.deinit()];
+                    return [3 /*break*/, 12];
                 case 7:
+                    console.log('Shutting down');
+                    _a.label = 8;
+                case 8:
+                    _a.trys.push([8, 10, , 11]);
+                    return [4 /*yield*/, bot.deinit()];
+                case 9:
                     _a.sent();
-                    return [7 /*endfinally*/];
-                case 8: return [2 /*return*/];
+                    return [3 /*break*/, 11];
+                case 10:
+                    _1 = _a.sent();
+                    return [3 /*break*/, 11];
+                case 11: return [7 /*endfinally*/];
+                case 12: return [2 /*return*/];
             }
         });
     });
