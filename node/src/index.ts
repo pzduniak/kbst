@@ -99,7 +99,7 @@ async function main() {
 
     // our own "log send on crash"
     if (!process.env.KEYBASE_PAPERKEY) {
-      // await bot.logSend()
+      await bot.logSend()
     }
 
     try {
