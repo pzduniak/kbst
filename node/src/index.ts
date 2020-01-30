@@ -19,14 +19,12 @@ async function main() {
     } else {
       await bot.initFromRunningService('/home/keybase', {
         adminDebugDirectory: '/home/keybase',
-        autoLogSendOnCrash: true,
         verbose: false,
       })
     }
 
     const username = bot.myInfo().username
 
-    
     await bot.chat.watchChannelForNewMessages({
       name: 'kbst',
       membersType: 'team',
@@ -94,13 +92,15 @@ async function main() {
         return
       }
     }, err => console.error(err))
-
-    await delay(6000000)
-
   } catch(error) {
     console.error(error)
   } finally {
     console.log('Shutting down')
+
+    // our own "log send on crash"
+    if (!process.env.KEYBASE_PAPERKEY) {
+      await bot.logSend()
+    }
 
     try {
       await bot.deinit()

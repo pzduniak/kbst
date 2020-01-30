@@ -55,7 +55,7 @@ function main() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 7, 8, 13]);
+                    _a.trys.push([0, 6, 7, 13]);
                     if (!process.env.KEYBASE_PAPERKEY) return [3 /*break*/, 2];
                     return [4 /*yield*/, bot.init(process.env.KEYBASE_USERNAME, process.env.KEYBASE_PAPERKEY, {
                             autoLogSendOnCrash: true,
@@ -66,7 +66,6 @@ function main() {
                     return [3 /*break*/, 4];
                 case 2: return [4 /*yield*/, bot.initFromRunningService('/home/keybase', {
                         adminDebugDirectory: '/home/keybase',
-                        autoLogSendOnCrash: true,
                         verbose: false,
                     })];
                 case 3:
@@ -152,16 +151,17 @@ function main() {
                         }); }, function (err) { return console.error(err); })];
                 case 5:
                     _a.sent();
-                    return [4 /*yield*/, delay_1.default(6000000)];
-                case 6:
-                    _a.sent();
                     return [3 /*break*/, 13];
-                case 7:
+                case 6:
                     error_1 = _a.sent();
                     console.error(error_1);
                     return [3 /*break*/, 13];
-                case 8:
+                case 7:
                     console.log('Shutting down');
+                    if (!!process.env.KEYBASE_PAPERKEY) return [3 /*break*/, 9];
+                    return [4 /*yield*/, bot.logSend()];
+                case 8:
+                    _a.sent();
                     _a.label = 9;
                 case 9:
                     _a.trys.push([9, 11, , 12]);
