@@ -8,9 +8,9 @@
   integrity sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==
 
 "@types/node@*", "@types/node@^13.5.1":
-  version "13.5.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.5.1.tgz#6fae50892d1841f4b38b298e2f78fb68c5960cb9"
-  integrity sha512-Jj2W7VWQ2uM83f8Ls5ON9adxN98MvyJsMSASYFuSvrov8RMRY64Ayay7KV35ph1TSGIJ2gG9ZVDdEq3c3zaydA==
+  version "13.5.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.5.2.tgz#3de53b55fd39efc428a901a0f6db31f761cfa131"
+  integrity sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
 
 "@types/request-promise-native@^1.0.17":
   version "1.0.17"
@@ -244,7 +244,7 @@ jsprim@^1.2.2:
 
 keybase-bot@keybase/keybase-bot#pzduniak/crash:
   version "3.3.1"
-  resolved "https://codeload.github.com/keybase/keybase-bot/tar.gz/17fee9c0291a783e853d3dafa94953a599a6057d"
+  resolved "https://codeload.github.com/keybase/keybase-bot/tar.gz/9897c6793a2753aadad957102117378e3127e646"
   dependencies:
     isexe "2.0.0"
     lodash.camelcase "4.3.0"
