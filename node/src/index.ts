@@ -30,6 +30,8 @@ async function main() {
       name: 'kbst',
       topicName: 'general',
     }, async message => {
+      console.log(message)
+
       // Only respond to the bot's owner
       if (message.sender.username !== owner) {
         return
