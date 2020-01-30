@@ -242,9 +242,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-keybase-bot@keybase/keybase-bot#6fa0ad183aa586262b5783036278dd35ad065bc5:
-  version "3.3.1"
-  resolved "https://codeload.github.com/keybase/keybase-bot/tar.gz/6fa0ad183aa586262b5783036278dd35ad065bc5"
+keybase-bot@keybase/keybase-bot#717ea3fe472d18ef1b86bb0d3fb124259af1f5bf:
+  version "3.3.2"
+  resolved "https://codeload.github.com/keybase/keybase-bot/tar.gz/717ea3fe472d18ef1b86bb0d3fb124259af1f5bf"
   dependencies:
     isexe "2.0.0"
     lodash.camelcase "4.3.0"
