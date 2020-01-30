@@ -89,6 +89,8 @@ async function main() {
       }
     }, err => console.error(err))
 
+    await delay(6000000)
+
   } catch(error) {
     console.error(error)
   } finally {
