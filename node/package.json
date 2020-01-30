@@ -7,7 +7,7 @@
     "@types/node": "^13.5.1",
     "@types/request-promise-native": "^1.0.17",
     "delay": "^4.3.0",
-    "keybase-bot": "keybase/keybase-bot#pzduniak/crash",
+    "keybase-bot": "keybase/keybase-bot#18aa5be747a0b85e1ba00ab6c49673ba385f3ed0",
     "moment": "^2.24.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.8",
