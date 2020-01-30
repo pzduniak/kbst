@@ -23,7 +23,7 @@ async function main() {
 
     const username = bot.myInfo().username
 
-    bot.chat.watchChannelForNewMessages({
+    await bot.chat.watchChannelForNewMessages({
       name: 'kbst',
       topicName: 'general',
     }, async message => {
