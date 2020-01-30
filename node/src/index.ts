@@ -15,7 +15,7 @@ async function main() {
         verbose: false,
       })
     } else {
-      await bot.initFromRunningService(undefined, {
+      await bot.initFromRunningService('/home/keybase', {
         autoLogSendOnCrash: true,
         verbose: false,
       })

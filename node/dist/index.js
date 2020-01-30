@@ -62,7 +62,7 @@ function main() {
                 case 1:
                     _a.sent();
                     return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, bot.initFromRunningService(undefined, {
+                case 2: return [4 /*yield*/, bot.initFromRunningService('/home/keybase', {
                         autoLogSendOnCrash: true,
                         verbose: false,
                     })];
