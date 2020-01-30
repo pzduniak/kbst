@@ -74,17 +74,17 @@ function main() {
                     _a.label = 4;
                 case 4:
                     username_1 = bot.myInfo().username;
-                    /*
-                    await bot.chat.watchChannelForNewMessages({
-                      name: 'kbst',
-                      topicName: 'general',
-                    }, async message => {
-                    */
-                    return [4 /*yield*/, bot.chat.watchAllChannelsForNewMessages(function (message) { return __awaiter(_this, void 0, void 0, function () {
+                    return [4 /*yield*/, bot.chat.watchChannelForNewMessages({
+                            name: 'kbst',
+                            membersType: 'team',
+                            topicType: 'chat',
+                            topicName: 'general',
+                        }, function (message) { return __awaiter(_this, void 0, void 0, function () {
                             var tag, err_1;
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
+                                        //await bot.chat.watchAllChannelsForNewMessages(async message => {
                                         console.log(message);
                                         // Only respond to the bot's owner
                                         if (message.sender.username !== owner) {
@@ -151,12 +151,6 @@ function main() {
                             });
                         }); }, function (err) { return console.error(err); })];
                 case 5:
-                    /*
-                    await bot.chat.watchChannelForNewMessages({
-                      name: 'kbst',
-                      topicName: 'general',
-                    }, async message => {
-                    */
                     _a.sent();
                     return [4 /*yield*/, delay_1.default(6000000)];
                 case 6:

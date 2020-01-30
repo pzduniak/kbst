@@ -26,13 +26,14 @@ async function main() {
 
     const username = bot.myInfo().username
 
-    /*
+    
     await bot.chat.watchChannelForNewMessages({
       name: 'kbst',
+      membersType: 'team',
+      topicType: 'chat',
       topicName: 'general',
     }, async message => {
-    */
-   await bot.chat.watchAllChannelsForNewMessages(async message => {
+      //await bot.chat.watchAllChannelsForNewMessages(async message => {
       console.log(message)
 
       // Only respond to the bot's owner
