@@ -18,6 +18,7 @@ async function main() {
       })
     } else {
       await bot.initFromRunningService('/home/keybase', {
+        adminDebugDirectory: '/home/keybase',
         autoLogSendOnCrash: true,
         verbose: false,
       })
