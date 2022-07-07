@@ -8,7 +8,7 @@
     "@types/request-promise-native": "^1.0.17",
     "delay": "^4.3.0",
     "keybase-bot": "keybase/keybase-bot#717ea3fe472d18ef1b86bb0d3fb124259af1f5bf",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.8",
     "typescript": "^3.7.5"
